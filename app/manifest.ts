@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Naman Barkiya | Applied AI Engineer",
-    short_name: "Naman Barkiya",
+    name: "Erin Zhang | Software Developer",
+    short_name: "Erin Zhang",
     description:
-      "Naman Barkiya - Applied AI Engineer working at the intersection of AI, data, and scalable software systems.",
+      "Erin Zhang - Software Developer focused on Python, SQL, Django, automation, actuarial systems, and analytics.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
@@ -25,8 +25,9 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     categories: [
       "portfolio",
-      "ai",
       "software engineering",
+      "data analytics",
+      "automation",
       "machine learning",
       "developer",
       "web development",

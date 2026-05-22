@@ -60,6 +60,21 @@ export type ValidSkills =
   | "FastAPI"
   | "SQL"
   | "NoSQL"
+  | "R"
+  | "Bash"
+  | "Linux"
+  | "Django"
+  | "pandas"
+  | "NumPy"
+  | "pytest"
+  | "Tableau"
+  | "Excel"
+  | "ETL"
+  | "Data Validation"
+  | "Machine Learning"
+  | "Quantitative Trading"
+  | "Microsoft SQL Server"
+  | "SQLite"
   | "Framer Motion";
 
 export type ValidCategory =
