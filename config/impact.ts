@@ -3,7 +3,19 @@ export type ImpactMetric = {
   value: number;
   suffix?: string;
   description: string;
-  trend: number[];
+  trend?: number[];
+  illustration?: "code";
+};
+
+export const reportGenerationImpact = {
+  label: "Report Generation Speed",
+  beforeValue: 5,
+  beforeSuffix: " hours",
+  afterValue: 3,
+  afterSuffix: " sec",
+  description:
+    "Replaced a manual Excel-heavy process with a reproducible Python reporting workflow.",
+  trend: [300, 180, 72, 18, 5, 3, 3],
 };
 
 export const impactMetrics: ImpactMetric[] = [
@@ -11,42 +23,32 @@ export const impactMetrics: ImpactMetric[] = [
     label: "Test Coverage",
     value: 91,
     suffix: "%",
-    description: "Focused regression coverage for core data workflows",
+    description:
+      "Regression coverage for core reporting and transformation logic",
     trend: [72, 76, 81, 84, 88, 91],
-  },
-  {
-    label: "Throughput Gain",
-    value: 4.6,
-    suffix: "x",
-    description: "Automation throughput compared with manual processing",
-    trend: [1.1, 1.7, 2.4, 3.1, 3.9, 4.6],
-  },
-  {
-    label: "Report Generation Speed",
-    value: 3,
-    suffix: " sec",
-    description: "Reduced manual report generation from hours to seconds",
-    trend: [55, 34, 21, 13, 8, 3],
-  },
-  {
-    label: "Automation Output",
-    value: 128,
-    suffix: " runs",
-    description: "Repeatable automated runs delivered across reporting cycles",
-    trend: [22, 38, 51, 73, 96, 128],
-  },
-  {
-    label: "Commit Activity",
-    value: 312,
-    suffix: "+",
-    description: "Public GitHub activity supported by live contribution data",
-    trend: [112, 148, 176, 221, 268, 312],
   },
   {
     label: "Validation / QA Checks",
     value: 840,
     suffix: "+",
-    description: "Automated checks across files, datasets, and outputs",
+    description:
+      "Cross-file checks for mappings, balances, missing data, and outputs",
     trend: [180, 260, 390, 520, 680, 840],
+  },
+  {
+    label: "Throughput Gain",
+    value: 4.6,
+    suffix: "x",
+    description:
+      "Increased reporting capacity by reducing manual processing and reruns",
+    trend: [1.1, 1.7, 2.4, 3.1, 3.9, 4.6],
+  },
+  {
+    label: "Automation Scripts",
+    value: 50,
+    suffix: "+",
+    description:
+      "Python workflows for reporting, validation, and data processing",
+    illustration: "code",
   },
 ];

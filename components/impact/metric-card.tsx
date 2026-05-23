@@ -36,17 +36,19 @@ export function MetricCard({ metric }: MetricCardProps) {
     return () => observer.disconnect();
   }, []);
 
+  const hasSparkline = metric.trend && metric.trend.length > 1;
+
   return (
     <div
       ref={cardRef}
-      className="flex min-h-[196px] flex-col justify-between rounded-[18px] border border-[#e0e0e0] bg-white p-6"
+      className="flex min-h-[220px] flex-col justify-between rounded-[18px] border border-[#e0e0e0] bg-white p-6"
     >
       <div className="space-y-4">
-        <div className="flex items-start justify-between gap-4">
+        <div className="space-y-3">
           <p className="text-[14px] font-semibold leading-[1.29] tracking-[-0.224px] text-[#333333]">
             {metric.label}
           </p>
-          <div className="min-w-[88px] text-right font-heading text-[34px] font-semibold leading-none tracking-[-0.374px] text-[#1d1d1f]">
+          <div className="font-heading text-[40px] font-semibold leading-none tracking-[-0.374px] text-[#1d1d1f]">
             <NumberFlow
               value={isVisible ? metric.value : 0}
               format={{
@@ -65,7 +67,46 @@ export function MetricCard({ metric }: MetricCardProps) {
         </p>
       </div>
       <div className="pt-5">
-        <SparklineChart values={metric.trend} />
+        {hasSparkline ? (
+          <SparklineChart values={metric.trend as number[]} />
+        ) : (
+          <div className="flex h-16 items-end justify-end text-[#0066cc]">
+            <svg
+              className="h-14 w-16"
+              viewBox="0 0 64 56"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <rect
+                x="12"
+                y="6"
+                width="34"
+                height="44"
+                rx="5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
+              <path
+                d="M22 20l-5 5 5 5M36 20l5 5-5 5M31 18l-5 14"
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+              <path
+                d="M46 14h6v36H22"
+                fill="none"
+                opacity="0.35"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
+        )}
       </div>
     </div>
   );

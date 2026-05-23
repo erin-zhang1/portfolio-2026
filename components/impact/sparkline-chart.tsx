@@ -3,11 +3,18 @@ import { cn } from "@/lib/utils";
 type SparklineChartProps = {
   values: number[];
   className?: string;
+  height?: number;
+  strokeWidth?: number;
+  width?: number;
 };
 
-export function SparklineChart({ values, className }: SparklineChartProps) {
-  const width = 120;
-  const height = 36;
+export function SparklineChart({
+  values,
+  className,
+  height = 36,
+  strokeWidth = 3,
+  width = 120,
+}: SparklineChartProps) {
   const min = Math.min(...values);
   const max = Math.max(...values);
   const range = max - min || 1;
@@ -34,7 +41,7 @@ export function SparklineChart({ values, className }: SparklineChartProps) {
         stroke="#0066cc"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="3"
+        strokeWidth={strokeWidth}
       />
     </svg>
   );
