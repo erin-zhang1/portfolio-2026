@@ -32,7 +32,8 @@ const getDurationText = (
   startDate: Date,
   endDate: Date | "Present"
 ): string => {
-  const endLabel = typeof endDate === "string" ? "Present" : getDateLabel(endDate);
+  const endLabel =
+    typeof endDate === "string" ? "Present" : getDateLabel(endDate);
   return `${getDateLabel(startDate)} - ${endLabel}`;
 };
 
@@ -138,7 +139,7 @@ export default async function ExperienceDetailPage({
 
   return (
     <ClientPageWrapper>
-      <div className="container max-w-4xl mx-auto py-8 px-4">
+      <div className="mx-auto max-w-4xl px-5 py-12">
         <AnimatedSection className="mb-6">
           <Button variant="ghost" size="sm" className="mb-4" asChild>
             <Link href="/experience">
@@ -149,7 +150,7 @@ export default async function ExperienceDetailPage({
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <Card className="overflow-hidden rounded-lg border bg-background p-2 transition-all duration-300">
+          <Card className="overflow-hidden bg-white p-2 transition-colors duration-300">
             <CardHeader className="pb-6">
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -166,11 +167,11 @@ export default async function ExperienceDetailPage({
                       </div>
                     )}
                     <div className="flex-1 text-center sm:text-left">
-                      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
+                      <h1 className="mb-2 text-[28px] font-semibold leading-[1.14] tracking-[0.196px] text-[#1d1d1f] md:text-[34px]">
                         {experience.position}
                       </h1>
                       <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
-                        <span className="text-md font-medium text-muted-foreground">
+                        <span className="text-[17px] font-normal tracking-[-0.374px] text-[#333333]">
                           {experience.company}
                         </span>
                         {experience.companyUrl && (
@@ -178,19 +179,19 @@ export default async function ExperienceDetailPage({
                             href={experience.companyUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-foreground transition-colors"
+                            className="text-primary transition-colors hover:text-[#0071e3]"
                           >
                             <Icons.externalLink className="w-4 h-4" />
                           </a>
                         )}
                       </div>
-                      <p className="text-muted-foreground">
+                      <p className="text-[17px] tracking-[-0.374px] text-[#7a7a7a]">
                         {experience.location}
                       </p>
                     </div>
                   </div>
                   <div className="flex justify-center sm:justify-end">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20">
+                    <span className="inline-flex items-center rounded-full border border-primary px-3 py-1 text-sm font-normal text-primary">
                       {getDurationText(
                         experience.startDate,
                         experience.endDate

@@ -1,5 +1,3 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -54,8 +52,22 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        heading: ["var(--font-heading)", ...fontFamily.sans],
+        sans: [
+          "SF Pro Text",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Inter",
+          "sans-serif",
+        ],
+        heading: [
+          "SF Pro Display",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Inter",
+          "sans-serif",
+        ],
       },
       borderRadius: {
         lg: "var(--radius)",

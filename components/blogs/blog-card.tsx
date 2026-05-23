@@ -20,19 +20,18 @@ export default function BlogCard({ blog }: BlogCardProps) {
   return (
     <Link
       href={`/blogs/${blog.slug}`}
-      className="group relative flex flex-col bg-background border border-border rounded-lg overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:border-primary/40 hover:-translate-y-0.5"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-[#e0e0e0] bg-white transition-colors duration-300 hover:border-primary"
     >
       <article className="flex flex-col h-full">
         {/* Cover image */}
         {blog.coverImage && (
-          <div className="relative w-full h-[180px] flex-shrink-0 overflow-hidden bg-muted">
+          <div className="relative h-[180px] w-full flex-shrink-0 overflow-hidden bg-[#f5f5f7]">
             <Image
               src={blog.coverImage}
               alt={blog.title}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
           </div>
         )}
 
@@ -43,31 +42,31 @@ export default function BlogCard({ blog }: BlogCardProps) {
             {blog.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                className="inline-flex items-center rounded-full border border-primary px-2 py-0.5 text-xs font-normal text-primary"
               >
                 {tag}
               </span>
             ))}
             {blog.tags.length > 3 && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-muted text-muted-foreground">
+              <span className="inline-flex items-center rounded-full border border-[#e0e0e0] bg-[#fafafc] px-2 py-0.5 text-xs font-normal text-[#7a7a7a]">
                 +{blog.tags.length - 3}
               </span>
             )}
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-bold text-foreground leading-snug line-clamp-2 group-hover:text-primary transition-colors duration-200">
+          <h3 className="line-clamp-2 text-[21px] font-semibold leading-[1.19] tracking-[0.231px] text-[#1d1d1f] transition-colors duration-200 group-hover:text-primary">
             {blog.title}
           </h3>
 
           {/* Description */}
-          <p className="text-sm text-muted-foreground line-clamp-3 flex-grow leading-relaxed">
+          <p className="line-clamp-3 flex-grow text-[17px] font-normal leading-[1.47] tracking-[-0.374px] text-[#333333]">
             {blog.description}
           </p>
 
           {/* Footer: date + read time + arrow */}
-          <div className="flex items-center justify-between pt-2 border-t border-border mt-auto">
-            <div className="flex items-center gap-3 text-xs text-muted-foreground">
+          <div className="mt-auto flex items-center justify-between border-t border-[#e0e0e0] pt-2">
+            <div className="flex items-center gap-3 text-xs text-[#7a7a7a]">
               <time dateTime={isoDate} className="flex items-center gap-1">
                 <Icons.calendar className="w-3.5 h-3.5" />
                 {formattedDate}

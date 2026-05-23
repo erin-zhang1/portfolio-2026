@@ -77,40 +77,40 @@ export default function IndexPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
 
-      <section className="space-y-6 pb-8 pt-6 mb-0 md:pb-12 md:py-20 lg:py-32 h-screen flex items-center">
-        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center -mt-20">
+      <section className="mb-0 flex min-h-[calc(100vh-44px)] items-center bg-white px-5 py-20">
+        <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
           <Image
             src={profileImg}
             height={100}
             width={100}
             sizes="100vw"
-            className="bg-primary rounded-full mb-0 h-auto md:mb-2 w-[60%] max-w-[16rem] border-8 border-primary"
+            className="mb-2 h-auto w-[52%] max-w-[14rem] rounded-full border border-[#e0e0e0] bg-[#f5f5f7]"
             alt="Erin Zhang - Software Developer Portfolio"
             priority
           />
           <AnimatedText
             as="h1"
             delay={0.2}
-            className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
+            className="font-heading text-[40px] font-semibold leading-[1.07] tracking-[-0.28px] text-[#1d1d1f] sm:text-[56px]"
           >
             Erin Zhang
           </AnimatedText>
           <AnimatedText
             as="h3"
             delay={0.4}
-            className="font-heading text-base sm:text-xl md:text-xl lg:text-2xl"
+            className="font-heading text-[21px] font-semibold leading-[1.19] tracking-[0.231px] text-[#1d1d1f]"
           >
             Software Developer
           </AnimatedText>
           <div className="mt-4 max-w-[42rem] text-center">
-            <p className="leading-normal text-muted-foreground text-sm sm:text-base">
+            <p className="text-[24px] font-light leading-[1.5] tracking-normal text-[#333333]">
               Software developer building Python, R, SQL, and Django automation
               systems for actuarial reporting, financial data processing, and
               analytics.
             </p>
           </div>
 
-          <div className="flex flex-col mt-10 items-center justify-center sm:flex-row sm:space-x-4 gap-3">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:space-x-2">
             <AnimatedText delay={0.6}>
               <Link
                 href={"/resume"}
@@ -138,32 +138,32 @@ export default function IndexPage() {
             </AnimatedText>
           </div>
           <AnimatedText delay={1.2}>
-            <Icons.chevronDown className="h-6 w-6 mt-10" />
+            <Icons.chevronDown className="mt-10 h-6 w-6 text-[#7a7a7a]" />
           </AnimatedText>
         </div>
       </section>
       <AnimatedSection
         direction="up"
-        className="container space-y-6 bg-muted py-10 my-14"
+        className="space-y-10 bg-[#f5f5f7] px-5 py-20 md:px-8"
         id="projects"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-4 text-center">
           <AnimatedText
             as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
+            className="font-heading text-[34px] font-semibold leading-[1.1] tracking-[-0.374px] text-[#1d1d1f] md:text-[40px]"
           >
             {pagesConfig.projects.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
+            className="max-w-[780px] text-[21px] font-normal leading-[1.35] tracking-[0.196px] text-[#333333]"
           >
             {pagesConfig.projects.description}
           </AnimatedText>
         </div>
         <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full items-stretch">
+          <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((exp, index) => (
               <AnimatedSection
                 key={exp.id}
@@ -178,7 +178,7 @@ export default function IndexPage() {
         </div>
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/projects">
-            <Button variant={"outline"} className="rounded-xl">
+            <Button variant={"outline"}>
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>
@@ -186,25 +186,25 @@ export default function IndexPage() {
       </AnimatedSection>
       <AnimatedSection
         direction="up"
-        className="container space-y-6 py-10 my-14"
+        className="space-y-10 bg-[#272729] px-5 py-20 text-white md:px-8"
         id="experience"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-4 text-center">
           <AnimatedText
             as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
+            className="font-heading text-[34px] font-semibold leading-[1.1] tracking-[-0.374px] text-white md:text-[40px]"
           >
             {pagesConfig.experience.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
+            className="max-w-[780px] text-[21px] font-normal leading-[1.35] tracking-[0.196px] text-[#cccccc]"
           >
             {pagesConfig.experience.description}
           </AnimatedText>
         </div>
-        <div className="mx-auto grid justify-center gap-4 md:w-full lg:grid-cols-3">
+        <div className="mx-auto grid max-w-[1440px] justify-center gap-5 md:w-full lg:grid-cols-3">
           {experiences.slice(0, 3).map((experience, index) => (
             <AnimatedSection
               key={experience.id}
@@ -217,7 +217,7 @@ export default function IndexPage() {
         </div>
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/experience">
-            <Button variant={"outline"} className="rounded-xl">
+            <Button variant={"outline"} className="border-[#2997ff] text-[#2997ff] hover:bg-[#2997ff] hover:text-white">
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>
@@ -225,20 +225,20 @@ export default function IndexPage() {
       </AnimatedSection>
       <AnimatedSection
         direction="up"
-        className="container space-y-6 bg-muted py-10 my-14"
+        className="space-y-10 bg-[#f5f5f7] px-5 py-20 md:px-8"
         id="contributions"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-4 text-center">
           <AnimatedText
             as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
+            className="font-heading text-[34px] font-semibold leading-[1.1] tracking-[-0.374px] text-[#1d1d1f] md:text-[40px]"
           >
             {pagesConfig.contributions.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
+            className="max-w-[780px] text-[21px] font-normal leading-[1.35] tracking-[0.196px] text-[#333333]"
           >
             {pagesConfig.contributions.description}
           </AnimatedText>
@@ -246,7 +246,7 @@ export default function IndexPage() {
         <ContributionCard contributions={featuredContributions} />
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/contributions">
-            <Button variant={"outline"} className="rounded-xl">
+            <Button variant={"outline"}>
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>
@@ -254,25 +254,25 @@ export default function IndexPage() {
       </AnimatedSection>
       <AnimatedSection
         direction="up"
-        className="container space-y-6 py-10 my-14"
+        className="space-y-10 bg-white px-5 py-20 md:px-8"
         id="blogs"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-4 text-center">
           <AnimatedText
             as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
+            className="font-heading text-[34px] font-semibold leading-[1.1] tracking-[-0.374px] text-[#1d1d1f] md:text-[40px]"
           >
             {pagesConfig.blogs.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
+            className="max-w-[780px] text-[21px] font-normal leading-[1.35] tracking-[0.196px] text-[#333333]"
           >
             {pagesConfig.blogs.description}
           </AnimatedText>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full items-stretch">
+        <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {featuredBlogs.map((blog, index) => (
             <AnimatedSection
               key={blog.slug}
@@ -286,7 +286,7 @@ export default function IndexPage() {
         </div>
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/blogs">
-            <Button variant={"outline"} className="rounded-xl">
+            <Button variant={"outline"}>
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>
@@ -294,20 +294,20 @@ export default function IndexPage() {
       </AnimatedSection>
       <AnimatedSection
         direction="up"
-        className="container space-y-6 bg-muted py-10 my-14"
+        className="space-y-10 bg-[#2a2a2c] px-5 py-20 text-white md:px-8"
         id="skills"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-4 text-center">
           <AnimatedText
             as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
+            className="font-heading text-[34px] font-semibold leading-[1.1] tracking-[-0.374px] text-white md:text-[40px]"
           >
             {pagesConfig.skills.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
+            className="max-w-[780px] text-[21px] font-normal leading-[1.35] tracking-[0.196px] text-[#cccccc]"
           >
             {pagesConfig.skills.description}
           </AnimatedText>
@@ -315,7 +315,7 @@ export default function IndexPage() {
         <SkillsCard skills={featuredSkills} />
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/skills">
-            <Button variant={"outline"} className="rounded-xl">
+            <Button variant={"outline"} className="border-[#2997ff] text-[#2997ff] hover:bg-[#2997ff] hover:text-white">
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>

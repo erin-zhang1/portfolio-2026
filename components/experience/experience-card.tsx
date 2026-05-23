@@ -21,7 +21,8 @@ const getDurationText = (
   startDate: Date,
   endDate: Date | "Present"
 ): string => {
-  const endLabel = typeof endDate === "string" ? "Present" : getDateLabel(endDate);
+  const endLabel =
+    typeof endDate === "string" ? "Present" : getDateLabel(endDate);
   return `${getDateLabel(startDate)} - ${endLabel}`;
 };
 
@@ -31,7 +32,7 @@ interface ExperienceCardProps {
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
   return (
-    <div className="group relative overflow-hidden rounded-lg border bg-background p-4 sm:p-6 transition-all duration-300">
+    <div className="group relative overflow-hidden rounded-[18px] border border-[#e0e0e0] bg-white p-5 transition-colors duration-300 sm:p-6">
       <div className="flex items-start gap-3 sm:gap-4">
         {experience.logo && (
           <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border-2 border-border overflow-hidden bg-white flex-shrink-0">
@@ -47,7 +48,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
         <div className="flex-1 min-w-0">
           <div className="flex flex-col gap-1 sm:gap-2">
             <div className="flex items-start sm:items-center gap-2">
-              <h3 className="text-base sm:text-lg font-bold text-foreground line-clamp-2 sm:line-clamp-1">
+              <h3 className="line-clamp-2 text-[17px] font-semibold leading-[1.24] tracking-[-0.374px] text-[#1d1d1f] sm:line-clamp-1">
                 {experience.position}
               </h3>
               {experience.companyUrl && (
@@ -55,37 +56,37 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
                   href={experience.companyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors flex-shrink-0 mt-0.5 sm:mt-0"
+                  className="mt-0.5 flex-shrink-0 text-primary transition-colors hover:text-[#0071e3] sm:mt-0"
                 >
                   <Icons.externalLink className="w-4 h-4" />
                 </a>
               )}
             </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm text-muted-foreground">
+            <div className="flex flex-col gap-1 text-sm tracking-[-0.224px] text-[#7a7a7a] sm:flex-row sm:items-center sm:gap-2">
               <span className="font-medium">{experience.company}</span>
               <span className="hidden sm:inline">•</span>
               <span>{experience.location}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+              <span className="inline-flex items-center rounded-full border border-primary px-3 py-1 text-xs font-normal text-primary">
                 {getDurationText(experience.startDate, experience.endDate)}
               </span>
             </div>
           </div>
-          <p className="mt-2 sm:mt-3 text-sm text-muted-foreground line-clamp-2">
+          <p className="mt-2 line-clamp-2 text-sm leading-[1.43] tracking-[-0.224px] text-[#333333] sm:mt-3">
             {experience.description[0]}
           </p>
           <div className="mt-3 sm:mt-4 flex flex-wrap gap-1">
             {experience.skills.slice(0, 2).map((skill, index) => (
               <span
                 key={index}
-                className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-muted text-muted-foreground"
+                className="inline-flex items-center rounded-full border border-[#e0e0e0] bg-[#fafafc] px-3 py-1 text-xs font-normal text-[#333333]"
               >
                 {skill}
               </span>
             ))}
             {experience.skills.length > 2 && (
-              <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-muted text-muted-foreground">
+              <span className="inline-flex items-center rounded-full border border-[#e0e0e0] bg-[#fafafc] px-3 py-1 text-xs font-normal text-[#333333]">
                 +{experience.skills.length - 2} more
               </span>
             )}
@@ -96,7 +97,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
         <Button
           variant="outline"
           size="sm"
-          className="rounded-lg w-full sm:w-auto"
+          className="w-full sm:w-auto"
           asChild
         >
           <Link href={`/experience/${experience.id}`}>

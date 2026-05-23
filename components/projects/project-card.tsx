@@ -12,33 +12,33 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="relative p-6 w-full bg-background border border-border rounded-lg h-full flex flex-col">
-      <div className="relative w-full h-[200px] flex-shrink-0">
+    <div className="relative flex h-full w-full flex-col rounded-[18px] border border-[#e0e0e0] bg-white p-6">
+      <div className="relative h-[200px] w-full flex-shrink-0 overflow-hidden rounded-lg bg-[#f5f5f7]">
         <Image
-          className="rounded-lg border border-border object-cover"
+          className="object-cover"
           src={project.companyLogoImg}
           alt="img"
           fill
         />
       </div>
       <div className="pt-5 space-y-3 flex flex-col flex-grow">
-        <h5 className="text-2xl font-bold tracking-tight text-foreground">
+        <h5 className="text-[21px] font-semibold leading-[1.19] tracking-[0.231px] text-[#1d1d1f]">
           {project.companyName}
         </h5>
-        <p className="line-clamp-3 font-normal text-muted-foreground flex-grow">
+        <p className="line-clamp-3 flex-grow text-[17px] font-normal leading-[1.47] tracking-[-0.374px] text-[#333333]">
           {project.shortDescription}
         </p>
         <div className="flex gap-2 flex-wrap">
           <ChipContainer textArr={project.category} />
         </div>
         <Link href={`/projects/${project.id}`} className="mt-auto">
-          <Button variant={"default"} className="mt-2 w-full sm:w-auto">
+          <Button variant={"outline"} size="sm" className="mt-2 w-full sm:w-auto">
             Read more
             <Icons.chevronRight className="w-4 ml-1" />
           </Button>
         </Link>
       </div>
-      <div className="absolute bottom-4 right-4 p-3 rounded-full bg-background border border-border hidden md:block">
+      <div className="absolute bottom-4 right-4 hidden rounded-full border border-[#e0e0e0] bg-white p-3 text-[#1d1d1f] md:block">
         {project.type === "Personal" ? (
           <Icons.userFill className="h-4 w-4" />
         ) : (

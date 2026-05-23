@@ -1,4 +1,3 @@
-import { Norican } from "next/font/google";
 import Link from "next/link";
 import * as React from "react";
 
@@ -11,35 +10,28 @@ interface MobileNavProps {
   children?: React.ReactNode;
 }
 
-const norican = Norican({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export function MobileNav({ items, children }: MobileNavProps) {
   useLockBody();
 
   return (
     <div
       className={cn(
-        "fixed inset-0 top-12 z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto p-6 pb-32 shadow-md animate-in slide-in-from-top-10 md:hidden"
+        "fixed inset-x-0 top-11 z-50 grid h-[calc(100vh-2.75rem)] grid-flow-row auto-rows-max overflow-auto bg-black/95 p-6 pb-32 backdrop-blur-xl animate-in slide-in-from-top-10 md:hidden"
       )}
     >
-      <div className="relative z-20 grid gap-6 rounded-md bg-popover p-4 text-popover-foreground shadow-md">
+      <div className="relative z-20 grid gap-6 text-white">
         <Link href="/" className="flex items-center space-x-2">
-          <span className={cn(norican.className, "text-2xl")}>
+          <span className="text-[21px] font-semibold tracking-[0.231px]">
             {siteConfig.authorName}
           </span>
         </Link>
-        <nav className="grid grid-flow-row auto-rows-max text-sm">
+        <nav className="grid grid-flow-row auto-rows-max text-[17px]">
           {items.map((item, index) => (
             <Link
               key={index}
               href={item.disabled ? "#" : item.href}
               className={cn(
-                "flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline",
+                "flex w-full items-center border-b border-white/10 py-4 font-normal text-white/80 hover:text-white",
                 item.disabled && "cursor-not-allowed opacity-60"
               )}
             >

@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 
 export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
   return (
-    <footer className={cn(className)}>
-      <div className="container flex items-center justify-center gap-8 mt-10 py-10 md:h-24">
+    <footer className={cn("bg-[#f5f5f7] text-[#333333]", className)}>
+      <div className="mx-auto flex max-w-[980px] items-center justify-center gap-8 px-5 py-16">
         {SocialLinks.map((item, ind) => (
           <CustomTooltip icon={item.icon} text={item.username} key={ind}>
             <Link
@@ -20,7 +20,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
                   variant: "ghost",
                   size: "sm",
                 }),
-                "h-10 w-10 p-2"
+                "h-11 w-11 rounded-full p-2 text-[#333333]"
               )}
             >
               <item.icon className="h-5 w-5" />

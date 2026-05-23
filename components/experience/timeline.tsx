@@ -22,7 +22,8 @@ const getDurationText = (
   startDate: Date,
   endDate: Date | "Present"
 ): string => {
-  const endLabel = typeof endDate === "string" ? "Present" : getDateLabel(endDate);
+  const endLabel =
+    typeof endDate === "string" ? "Present" : getDateLabel(endDate);
   return `${getDateLabel(startDate)} - ${endLabel}`;
 };
 
@@ -46,7 +47,7 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
           delay={0.1 * (index + 1)}
           direction="up"
         >
-          <div className="w-full p-4 sm:p-6 bg-background border border-border rounded-lg transition-all duration-300">
+          <div className="w-full rounded-[18px] border border-[#e0e0e0] bg-white p-5 transition-colors duration-300 sm:p-6">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
               <div className="flex items-start gap-4 flex-1 min-w-0">
                 {experience.logo && (
@@ -62,10 +63,10 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
                 )}
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                    <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                    <h3 className="text-[21px] font-semibold leading-[1.19] tracking-[0.231px] text-[#1d1d1f]">
                       {experience.position}
                     </h3>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-primary/10 text-primary border border-primary/20 w-fit">
+                    <span className="inline-flex w-fit items-center rounded-full border border-primary px-3 py-1 text-xs font-normal text-primary sm:text-sm">
                       {getDurationText(
                         experience.startDate,
                         experience.endDate
@@ -73,7 +74,7 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-sm font-medium text-muted-foreground">
+                    <span className="text-sm font-normal tracking-[-0.224px] text-[#7a7a7a]">
                       {experience.company}
                     </span>
                     {experience.companyUrl && (
@@ -81,16 +82,16 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
                         href={experience.companyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-primary transition-colors hover:text-[#0071e3]"
                       >
                         <Icons.externalLink className="w-4 h-4" />
                       </a>
                     )}
                   </div>
-                  <p className="text-sm text-muted-foreground mb-2">
+                  <p className="mb-2 text-sm tracking-[-0.224px] text-[#7a7a7a]">
                     {experience.location}
                   </p>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
+                  <p className="line-clamp-2 text-[17px] leading-[1.47] tracking-[-0.374px] text-[#333333]">
                     {experience.description[0]}
                   </p>
                 </div>
@@ -98,7 +99,7 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
               <Button
                 variant="outline"
                 size="sm"
-                className="rounded-lg w-full sm:w-auto"
+                className="w-full sm:w-auto"
                 asChild
               >
                 <Link href={`/experience/${experience.id}`}>
