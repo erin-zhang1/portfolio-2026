@@ -41,14 +41,14 @@ export function MetricCard({ metric }: MetricCardProps) {
   return (
     <div
       ref={cardRef}
-      className="flex min-h-[220px] flex-col justify-between rounded-[18px] border border-[#e0e0e0] bg-white p-6"
+      className="flex min-h-[142px] flex-col justify-between rounded-[18px] border border-[#e0e0e0] bg-white p-3.5"
     >
-      <div className="space-y-4">
-        <div className="space-y-3">
+      <div className="space-y-3">
+        <div className="space-y-2">
           <p className="text-[14px] font-semibold leading-[1.29] tracking-[-0.224px] text-[#333333]">
             {metric.label}
           </p>
-          <div className="font-heading text-[40px] font-semibold leading-none tracking-[-0.374px] text-[#1d1d1f]">
+          <div className="font-heading text-[29px] font-semibold leading-none tracking-[-0.374px] text-[#1d1d1f]">
             <NumberFlow
               value={isVisible ? metric.value : 0}
               format={{
@@ -62,17 +62,23 @@ export function MetricCard({ metric }: MetricCardProps) {
             ) : null}
           </div>
         </div>
-        <p className="text-[14px] font-normal leading-[1.43] tracking-[-0.224px] text-[#7a7a7a]">
+        <p className="text-[13px] font-normal leading-[1.35] tracking-[-0.224px] text-[#7a7a7a]">
           {metric.description}
         </p>
       </div>
-      <div className="pt-5">
+      <div className="pt-3">
         {hasSparkline ? (
-          <SparklineChart values={metric.trend as number[]} />
+          <SparklineChart
+            values={metric.trend as number[]}
+            className="ml-auto h-7 w-full max-w-[300px]"
+            height={40}
+            width={300}
+            strokeWidth={2.25}
+          />
         ) : (
-          <div className="flex h-16 items-end justify-end text-[#0066cc]">
+          <div className="flex h-8 items-end justify-end text-[#0066cc]">
             <svg
-              className="h-14 w-16"
+              className="h-8 w-10"
               viewBox="0 0 64 56"
               aria-hidden="true"
               focusable="false"

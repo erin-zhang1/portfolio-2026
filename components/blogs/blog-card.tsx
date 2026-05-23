@@ -25,7 +25,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
       <article className="flex flex-col h-full">
         {/* Cover image */}
         {blog.coverImage && (
-          <div className="relative h-[180px] w-full flex-shrink-0 overflow-hidden bg-[#f5f5f7]">
+          <div className="relative h-[124px] w-full flex-shrink-0 overflow-hidden bg-[#f5f5f7] md:h-[136px]">
             <Image
               src={blog.coverImage}
               alt={blog.title}
@@ -36,7 +36,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
         )}
 
         {/* Content */}
-        <div className="p-5 flex flex-col flex-grow gap-3">
+        <div className="flex flex-grow flex-col gap-2.5 p-4">
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5" aria-label="Tags">
             {blog.tags.slice(0, 3).map((tag) => (
@@ -55,18 +55,18 @@ export default function BlogCard({ blog }: BlogCardProps) {
           </div>
 
           {/* Title */}
-          <h3 className="line-clamp-2 text-[21px] font-semibold leading-[1.19] tracking-[0.231px] text-[#1d1d1f] transition-colors duration-200 group-hover:text-primary">
+          <h3 className="text-[17px] font-semibold leading-[1.19] tracking-[0.231px] text-[#1d1d1f] transition-colors duration-200 group-hover:text-primary">
             {blog.title}
           </h3>
 
           {/* Description */}
-          <p className="line-clamp-3 flex-grow text-[17px] font-normal leading-[1.47] tracking-[-0.374px] text-[#333333]">
+          <p className="flex-grow text-[13px] font-normal leading-[1.35] tracking-[-0.224px] text-[#333333]">
             {blog.description}
           </p>
 
           {/* Footer: date + read time + arrow */}
           <div className="mt-auto flex items-center justify-between border-t border-[#e0e0e0] pt-2">
-            <div className="flex items-center gap-3 text-xs text-[#7a7a7a]">
+            <div className="flex items-center gap-2 text-[11px] text-[#7a7a7a]">
               <time dateTime={isoDate} className="flex items-center gap-1">
                 <Icons.calendar className="w-3.5 h-3.5" />
                 {formattedDate}

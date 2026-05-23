@@ -35,45 +35,47 @@ export function ReportGenerationCard() {
   return (
     <div
       ref={cardRef}
-      className="flex min-h-[464px] flex-col justify-between rounded-[18px] border border-[#e0e0e0] bg-white p-8 md:p-10"
+      className="flex min-h-[300px] flex-col justify-between rounded-[18px] border border-[#e0e0e0] bg-white p-5 md:p-6"
     >
-      <div className="space-y-8">
-        <div className="space-y-4">
+      <div className="space-y-5">
+        <div className="space-y-3">
           <p className="text-[17px] font-semibold leading-[1.24] tracking-[-0.374px] text-[#333333]">
             {reportGenerationImpact.label}
           </p>
-          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 font-heading text-[48px] font-semibold leading-none tracking-[-0.374px] text-[#1d1d1f] md:text-[64px]">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 font-heading text-[40px] font-semibold leading-none tracking-[-0.374px] text-[#1d1d1f] md:text-[52px]">
             <span className="sr-only">5 hours to 3 sec</span>
             <span>
               <NumberFlow
                 value={isVisible ? reportGenerationImpact.beforeValue : 0}
               />
-              <span className="text-[21px] font-normal tracking-[0.231px] text-[#333333] md:text-[24px]">
+              <span className="text-[18px] font-normal tracking-[0.231px] text-[#333333] md:text-[21px]">
                 {reportGenerationImpact.beforeSuffix}
               </span>
             </span>
-            <span className="text-[34px] text-[#0066cc] md:text-[40px]">→</span>
+            <span className="text-[28px] text-[#0066cc] md:text-[34px]">
+              {"->"}
+            </span>
             <span>
               <NumberFlow
                 value={isVisible ? reportGenerationImpact.afterValue : 0}
               />
-              <span className="text-[21px] font-normal tracking-[0.231px] text-[#333333] md:text-[24px]">
+              <span className="text-[18px] font-normal tracking-[0.231px] text-[#333333] md:text-[21px]">
                 {reportGenerationImpact.afterSuffix}
               </span>
             </span>
           </div>
-          <p className="max-w-[36rem] text-[17px] font-normal leading-[1.47] tracking-[-0.374px] text-[#333333]">
+          <p className="max-w-[36rem] text-[15px] font-normal leading-[1.43] tracking-[-0.224px] text-[#333333] md:text-[16px]">
             {reportGenerationImpact.description}
           </p>
         </div>
       </div>
-      <div className="pt-10">
+      <div className="flex justify-center pt-6">
         <SparklineChart
           values={reportGenerationImpact.trend}
-          className="h-24"
-          height={84}
+          className="h-[150px] w-full max-w-[620px]"
+          height={200}
           strokeWidth={4}
-          width={240}
+          width={700}
         />
       </div>
     </div>
