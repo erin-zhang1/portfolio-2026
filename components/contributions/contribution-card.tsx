@@ -11,7 +11,7 @@ export default function ContributionCard({
   contributions,
 }: ContributionCardProps) {
   return (
-    <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+    <div className="mx-auto grid items-stretch justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {contributions.map((contribution, id) => (
         <Link
           href={contribution.link}
@@ -22,10 +22,10 @@ export default function ContributionCard({
           <div className="relative flex h-full w-full flex-col rounded-[18px] border border-[#e0e0e0] bg-white p-2 transition-colors hover:border-primary">
             <Icons.externalLink
               size={35}
-              className="absolute bottom-3 right-3 z-10 h-8 w-8 cursor-pointer rounded-full border border-[#e0e0e0] bg-white p-1.5 text-primary sm:h-10 sm:w-10 sm:p-2"
+              className="absolute bottom-3 right-3 z-10 h-8 w-8 cursor-pointer rounded-full border border-[#e0e0e0] bg-white p-1.5 text-primary"
             />
-            <div className="flex min-h-[170px] flex-col justify-between rounded-md p-4 sm:p-6 pb-12 sm:pb-6 flex-grow">
-              <div className="flex flex-row justify-between items-start gap-2 mb-4 min-w-0">
+            <div className="flex min-h-[130px] flex-grow flex-col justify-between rounded-md p-4 pb-11">
+              <div className="mb-3 flex min-w-0 flex-row items-start justify-between gap-2">
                 <h3 className="flex min-w-0 flex-1 items-center space-x-2 text-[17px] font-semibold tracking-[-0.374px] text-[#1d1d1f]">
                   <Icons.gitRepoIcon
                     size={18}
@@ -40,8 +40,8 @@ export default function ContributionCard({
                   className="flex-shrink-0 sm:w-5 sm:h-5"
                 />
               </div>
-              <div className="space-y-3 sm:space-y-4 min-w-0">
-                <p className="line-clamp-3 break-words text-sm leading-[1.43] tracking-[-0.224px] text-[#333333]">
+              <div className="min-w-0 space-y-2">
+                <p className="break-words text-[13px] leading-[1.35] tracking-[-0.224px] text-[#333333]">
                   {contribution.contibutionDescription}
                 </p>
                 <p className="flex min-w-0 items-center space-x-2 text-sm tracking-[-0.224px] text-[#7a7a7a]">
