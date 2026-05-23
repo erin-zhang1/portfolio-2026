@@ -18,7 +18,7 @@ export const SocialLinks: SocialInterface[] = [
     name: "LinkedIn",
     username: "Erin Zhang",
     icon: Icons.linkedin,
-    link: "https://www.linkedin.com/in/erin-zhang",
+    link: "https://www.linkedin.com/in/erin-zhang-823217252",
   },
   {
     name: "Gmail",
