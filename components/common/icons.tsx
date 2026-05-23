@@ -18,21 +18,14 @@ import {
   Loader2,
   LucideProps,
   Menu,
-  Moon,
   MoreVertical,
-  Music,
-  Palette,
   Phone,
   Pizza,
   Plus,
-  Scroll,
   Settings,
-  Sparkles,
-  SunMedium,
   Trash,
   User,
   X,
-  Zap,
 } from "lucide-react";
 import { AiFillStar } from "react-icons/ai";
 import { BiLaugh, BiSolidUser } from "react-icons/bi";
@@ -91,8 +84,6 @@ export const Icons = {
   arrowRight: ArrowRight,
   help: HelpCircle,
   pizza: Pizza,
-  sun: SunMedium,
-  moon: Moon,
   laptop: Laptop,
   menu: Menu,
   chevronDown: ChevronDown,
@@ -172,9 +163,4 @@ export const Icons = {
       </svg>
     </div>
   ),
-  retro: Palette,
-  cyberpunk: Zap,
-  paper: Scroll,
-  aurora: Sparkles,
-  synthwave: Music,
 };

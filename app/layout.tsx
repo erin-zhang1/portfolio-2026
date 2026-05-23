@@ -4,7 +4,6 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 
 import { Analytics } from "@/components/common/analytics";
-import { ThemeProvider } from "@/components/common/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/config/site";
 import { ModalProvider } from "@/providers/modal-provider";
@@ -89,20 +88,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
   // }
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head />
       <body className="min-h-screen bg-background font-sans antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          themes={["light"]}
-        >
-          {children}
-          <Analytics />
-          <Toaster />
-          <ModalProvider />
-        </ThemeProvider>
+        {children}
+        <Analytics />
+        <Toaster />
+        <ModalProvider />
 
         <Script
           src="https://convot.xyz/widget.js"
