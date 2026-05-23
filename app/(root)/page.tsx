@@ -78,7 +78,7 @@ export default function IndexPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
 
-      <section className="mb-0 flex min-h-[calc(100vh-44px)] items-center bg-white px-5 py-8 md:py-10 lg:h-[calc(100vh-44px)] lg:py-6">
+      <section className="mb-0 flex min-h-[calc(100svh-44px)] items-center bg-white px-5 py-8 md:py-10 lg:h-[calc(100svh-44px)] lg:py-6">
         <div className="mx-auto flex max-w-[980px] flex-col items-center gap-2.5 text-center">
           <Image
             src={profileImg}
@@ -146,20 +146,20 @@ export default function IndexPage() {
       <EngineeringImpactSection />
       <AnimatedSection
         direction="up"
-        className="flex min-h-[calc(100vh-44px)] flex-col justify-center space-y-5 bg-[#f5f5f7] px-5 py-10 md:px-8 lg:h-[calc(100vh-44px)] lg:py-8"
+        className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-black px-5 py-10 text-white md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"
         id="projects"
       >
         <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-3 text-center">
           <AnimatedText
             as="h2"
-            className="font-heading text-[32px] font-semibold leading-[1.1] tracking-[-0.374px] text-[#1d1d1f] md:text-[36px]"
+            className="font-heading text-[32px] font-semibold leading-[1.1] tracking-[-0.374px] text-white md:text-[36px]"
           >
             {pagesConfig.projects.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[760px] text-[18px] font-normal leading-[1.32] tracking-[0.196px] text-[#333333] md:text-[20px]"
+            className="max-w-[760px] text-[18px] font-normal leading-[1.32] tracking-[0.196px] text-[#cccccc] md:text-[20px]"
           >
             {pagesConfig.projects.description}
           </AnimatedText>
@@ -180,7 +180,10 @@ export default function IndexPage() {
         </div>
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/projects">
-            <Button variant={"outline"}>
+            <Button
+              variant={"outline"}
+              className="border-[#2997ff] text-[#2997ff] hover:bg-[#2997ff] hover:text-white"
+            >
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>
@@ -188,20 +191,20 @@ export default function IndexPage() {
       </AnimatedSection>
       <AnimatedSection
         direction="up"
-        className="flex min-h-[calc(100vh-44px)] flex-col justify-center space-y-5 bg-[#272729] px-5 py-10 text-white md:px-8 lg:h-[calc(100vh-44px)] lg:py-8"
+        className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-[#f5f5f7] px-5 py-10 md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"
         id="experience"
       >
         <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-3 text-center">
           <AnimatedText
             as="h2"
-            className="font-heading text-[32px] font-semibold leading-[1.1] tracking-[-0.374px] text-white md:text-[36px]"
+            className="font-heading text-[32px] font-semibold leading-[1.1] tracking-[-0.374px] text-[#1d1d1f] md:text-[36px]"
           >
             {pagesConfig.experience.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[760px] text-[18px] font-normal leading-[1.32] tracking-[0.196px] text-[#cccccc] md:text-[20px]"
+            className="max-w-[760px] text-[18px] font-normal leading-[1.32] tracking-[0.196px] text-[#333333] md:text-[20px]"
           >
             {pagesConfig.experience.description}
           </AnimatedText>
@@ -219,10 +222,7 @@ export default function IndexPage() {
         </div>
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/experience">
-            <Button
-              variant={"outline"}
-              className="border-[#2997ff] text-[#2997ff] hover:bg-[#2997ff] hover:text-white"
-            >
+            <Button variant={"outline"}>
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>
@@ -230,7 +230,7 @@ export default function IndexPage() {
       </AnimatedSection>
       <AnimatedSection
         direction="up"
-        className="flex min-h-[calc(100vh-44px)] flex-col justify-center space-y-5 bg-[#f5f5f7] px-5 py-10 md:px-8 lg:h-[calc(100vh-44px)] lg:py-8"
+        className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-white px-5 py-10 md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"
         id="contributions"
       >
         <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-3 text-center">
@@ -259,7 +259,7 @@ export default function IndexPage() {
       </AnimatedSection>
       <AnimatedSection
         direction="up"
-        className="flex min-h-[calc(100vh-44px)] flex-col justify-center space-y-5 bg-white px-5 py-10 md:px-8 lg:h-[calc(100vh-44px)] lg:py-8"
+        className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-[#f5f5f7] px-5 py-10 md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"
         id="blogs"
       >
         <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-3 text-center">
@@ -299,7 +299,7 @@ export default function IndexPage() {
       </AnimatedSection>
       <AnimatedSection
         direction="up"
-        className="flex min-h-[calc(100vh-44px)] flex-col justify-center space-y-5 bg-[#2a2a2c] px-5 py-10 text-white md:px-8 lg:h-[calc(100vh-44px)] lg:py-8"
+        className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-black px-5 py-10 text-white md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"
         id="skills"
       >
         <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-3 text-center">

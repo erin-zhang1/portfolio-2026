@@ -35,11 +35,11 @@ export function ReportGenerationCard() {
   return (
     <div
       ref={cardRef}
-      className="flex min-h-[300px] flex-col justify-between rounded-[18px] border border-[#e0e0e0] bg-white p-5 md:p-6"
+      className="flex min-h-[326px] flex-col justify-between rounded-[18px] border border-[#e0e0e0] bg-white p-5 md:p-6"
     >
       <div className="space-y-5">
         <div className="space-y-3">
-          <p className="text-[17px] font-semibold leading-[1.24] tracking-[-0.374px] text-[#333333]">
+          <p className="text-[15px] font-semibold leading-[1.35] tracking-[-0.224px] text-[#333333]">
             {reportGenerationImpact.label}
           </p>
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 font-heading text-[40px] font-semibold leading-none tracking-[-0.374px] text-[#1d1d1f] md:text-[52px]">
@@ -64,18 +64,18 @@ export function ReportGenerationCard() {
               </span>
             </span>
           </div>
-          <p className="max-w-[36rem] text-[15px] font-normal leading-[1.43] tracking-[-0.224px] text-[#333333] md:text-[16px]">
+          <p className="max-w-[36rem] text-[15px] font-normal leading-[1.43] tracking-[-0.224px] text-[#333333]">
             {reportGenerationImpact.description}
           </p>
         </div>
       </div>
-      <div className="flex justify-center pt-6">
+      <div className="flex justify-center pt-5">
         <SparklineChart
           values={reportGenerationImpact.trend}
-          className="h-[150px] w-full max-w-[620px]"
-          height={200}
-          strokeWidth={4}
-          width={700}
+          className="h-28 w-full max-w-[560px]"
+          height={150}
+          strokeWidth={3.5}
+          width={620}
         />
       </div>
     </div>

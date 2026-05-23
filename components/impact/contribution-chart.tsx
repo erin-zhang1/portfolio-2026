@@ -82,13 +82,13 @@ export function ContributionChart({ username }: ContributionChartProps) {
   }, [data]);
 
   return (
-    <div className="flex min-h-[210px] flex-col rounded-[18px] border border-[#e0e0e0] bg-white p-5">
+    <div className="flex min-h-[178px] flex-col rounded-[18px] border border-[#e0e0e0] bg-white p-4">
       <div className="mb-2.5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-[14px] font-semibold leading-[1.29] tracking-[-0.224px] text-[#333333]">
+          <p className="text-[15px] font-semibold leading-[1.35] tracking-[-0.224px] text-[#333333]">
             GitHub Contributions
           </p>
-          <p className="mt-1 text-[13px] font-normal leading-[1.35] tracking-[-0.224px] text-[#7a7a7a]">
+          <p className="mt-1 text-[15px] font-normal leading-[1.35] tracking-[-0.224px] text-[#7a7a7a]">
             Live last-year activity for @{username}
           </p>
         </div>
@@ -113,16 +113,16 @@ export function ContributionChart({ username }: ContributionChartProps) {
       </div>
 
       {status === "ready" && data ? (
-        <div className="github-calendar-panel flex flex-1 items-center justify-center overflow-x-auto pt-3">
+        <div className="github-calendar-panel flex flex-1 items-center justify-center pt-2">
           <GitHubCalendar
             username={username}
             year="last"
-            blockMargin={isCompact ? 2 : 5}
+            blockMargin={isCompact ? 2 : 4}
             blockRadius={2}
-            blockSize={isCompact ? 5 : 9}
+            blockSize={isCompact ? 4 : 8}
             colorScheme="light"
             errorMessage="GitHub contribution data is temporarily unavailable."
-            fontSize={14}
+            fontSize={12}
             labels={{
               months: [
                 "Jan",
