@@ -6,9 +6,8 @@ export const siteConfig = {
     "Erin Zhang - Software Developer with experience building Python, R, SQL, and Django automation systems for actuarial reporting, financial data processing, and analytics.",
   url: "https://nbarkiya.xyz",
   links: {
-    twitter: "https://www.linkedin.com/in/erin-zhang",
     github: "https://github.com/erin-zhang1",
-    linkedin: "https://www.linkedin.com/in/erin-zhang",
+    linkedin: "https://www.linkedin.com/in/erin-zhang-823217252",
     email: "mailto:y3695zha@uwaterloo.ca",
     templateRepo: "https://github.com/namanbarkiya/minimal-next-portfolio",
   },
