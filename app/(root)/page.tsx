@@ -10,6 +10,7 @@ import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
 import ContributionCard from "@/components/contributions/contribution-card";
 import ExperienceCard from "@/components/experience/experience-card";
+import { EngineeringImpactSection } from "@/components/impact/engineering-impact-section";
 import ProjectCard from "@/components/projects/project-card";
 import SkillsCard from "@/components/skills/skills-card";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -142,6 +143,7 @@ export default function IndexPage() {
           </AnimatedText>
         </div>
       </section>
+      <EngineeringImpactSection />
       <AnimatedSection
         direction="up"
         className="space-y-10 bg-[#f5f5f7] px-5 py-20 md:px-8"
@@ -217,7 +219,10 @@ export default function IndexPage() {
         </div>
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/experience">
-            <Button variant={"outline"} className="border-[#2997ff] text-[#2997ff] hover:bg-[#2997ff] hover:text-white">
+            <Button
+              variant={"outline"}
+              className="border-[#2997ff] text-[#2997ff] hover:bg-[#2997ff] hover:text-white"
+            >
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>
@@ -315,7 +320,10 @@ export default function IndexPage() {
         <SkillsCard skills={featuredSkills} />
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/skills">
-            <Button variant={"outline"} className="border-[#2997ff] text-[#2997ff] hover:bg-[#2997ff] hover:text-white">
+            <Button
+              variant={"outline"}
+              className="border-[#2997ff] text-[#2997ff] hover:bg-[#2997ff] hover:text-white"
+            >
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
           </Link>

@@ -1,6 +1,10 @@
 export const routesConfig: any = {
   mainNav: [
     {
+      title: "Impact",
+      href: "/#impact",
+    },
+    {
       title: "Projects",
       href: "/projects",
     },
