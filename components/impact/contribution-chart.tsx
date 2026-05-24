@@ -82,7 +82,7 @@ export function ContributionChart({ username }: ContributionChartProps) {
   }, [data]);
 
   return (
-    <div className="flex min-h-[178px] flex-col rounded-[18px] border border-[#e0e0e0] bg-white p-4">
+    <div className="flex min-h-[170px] flex-col rounded-[18px] border border-[#e0e0e0] bg-white p-4">
       <div className="mb-2.5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-[15px] font-semibold leading-[1.35] tracking-[-0.224px] text-[#333333]">
@@ -117,12 +117,12 @@ export function ContributionChart({ username }: ContributionChartProps) {
           <GitHubCalendar
             username={username}
             year="last"
-            blockMargin={isCompact ? 2 : 4}
+            blockMargin={isCompact ? 2 : 3}
             blockRadius={2}
-            blockSize={isCompact ? 4 : 8}
+            blockSize={isCompact ? 4 : 7}
             colorScheme="light"
             errorMessage="GitHub contribution data is temporarily unavailable."
-            fontSize={12}
+            fontSize={11}
             labels={{
               months: [
                 "Jan",

@@ -9,7 +9,7 @@ import { AnimatedText } from "@/components/common/animated-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
 import ContributionCard from "@/components/contributions/contribution-card";
-import ExperienceCard from "@/components/experience/experience-card";
+import { ExperienceTimelineSection } from "@/components/experience/experience-timeline-section";
 import { EngineeringImpactSection } from "@/components/impact/engineering-impact-section";
 import ProjectCard from "@/components/projects/project-card";
 import SkillsCard from "@/components/skills/skills-card";
@@ -189,45 +189,7 @@ export default function IndexPage() {
           </Link>
         </AnimatedText>
       </AnimatedSection>
-      <AnimatedSection
-        direction="up"
-        className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-[#f5f5f7] px-5 py-10 md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"
-        id="experience"
-      >
-        <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-3 text-center">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-[32px] font-semibold leading-[1.1] tracking-[-0.374px] text-[#1d1d1f] md:text-[36px]"
-          >
-            {pagesConfig.experience.title}
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[760px] text-[18px] font-normal leading-[1.32] tracking-[0.196px] text-[#333333] md:text-[20px]"
-          >
-            {pagesConfig.experience.description}
-          </AnimatedText>
-        </div>
-        <div className="mx-auto grid max-w-[1440px] justify-center gap-4 md:w-full lg:grid-cols-3">
-          {experiences.slice(0, 3).map((experience, index) => (
-            <AnimatedSection
-              key={experience.id}
-              delay={0.1 * (index + 1)}
-              direction="up"
-            >
-              <ExperienceCard experience={experience} />
-            </AnimatedSection>
-          ))}
-        </div>
-        <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/experience">
-            <Button variant={"outline"}>
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
-            </Button>
-          </Link>
-        </AnimatedText>
-      </AnimatedSection>
+      <ExperienceTimelineSection experiences={experiences.slice(0, 4)} />
       <AnimatedSection
         direction="up"
         className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-white px-5 py-10 md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"

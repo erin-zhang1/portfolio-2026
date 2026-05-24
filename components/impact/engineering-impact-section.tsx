@@ -10,7 +10,7 @@ export function EngineeringImpactSection() {
   return (
     <AnimatedSection
       direction="up"
-      className="flex min-h-[calc(100svh-44px)] scroll-mt-0 flex-col justify-center bg-[#f5f5f7] px-5 py-8 md:px-8 lg:h-[calc(100svh-44px)] lg:py-5"
+      className="scroll-mt-0 bg-[#f5f5f7] px-5 pb-28 pt-28 md:px-8 md:pb-32 md:pt-32"
       id="impact"
     >
       <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-3 text-center">
@@ -30,14 +30,14 @@ export function EngineeringImpactSection() {
         </AnimatedText>
       </div>
 
-      <div className="mx-auto mt-5 grid w-full max-w-[1240px] gap-4 lg:grid-cols-3">
+      <div className="mx-auto mt-7 grid w-full max-w-[1180px] gap-4 lg:grid-cols-3">
         <ReportGenerationCard />
         {impactMetrics.map((metric) => (
           <MetricCard key={metric.label} metric={metric} />
         ))}
       </div>
 
-      <div className="mx-auto mt-4 w-full max-w-[1120px]">
+      <div className="mx-auto mt-5 w-full max-w-[1080px]">
         <ContributionChart username={siteConfig.username} />
       </div>
     </AnimatedSection>
