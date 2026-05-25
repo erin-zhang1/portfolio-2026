@@ -106,15 +106,14 @@ export function ExperienceTimelineSection({
           Experience
         </h2>
       </motion.div>
-
-      <div className="mx-auto mt-7 w-full max-w-[980px] md:mt-8">
-        <div className="relative">
+      <div className="mx-auto mt-7 w-full md:mt-8">
+        <div className="relative mx-auto w-full max-w-[940px]">
           <motion.div
             className="absolute left-[11px] top-1 h-[calc(100%-0.75rem)] w-px origin-top bg-[#1d1d1f] md:left-[15px]"
             variants={lineVariants}
           />
 
-          <div className="space-y-5 md:space-y-6">
+          <div className="space-y-8 md:space-y-10">
             {experiences.map((experience, index) => (
               <motion.article
                 key={experience.id}
@@ -131,7 +130,7 @@ export function ExperienceTimelineSection({
 
                 <motion.div className="pb-1" variants={contentVariants}>
                   <motion.h3
-                    className="font-heading text-[19px] font-semibold leading-[1.18] tracking-[-0.224px] text-[#1d1d1f] md:text-[21px]"
+                    className="font-heading text-[19px] font-semibold leading-[1.18] tracking-[-0.224px] text-[#1d1d1f] md:whitespace-nowrap md:text-[20px] lg:text-[21px]"
                     variants={textVariants}
                   >
                     {experience.position}{" "}
@@ -153,6 +152,19 @@ export function ExperienceTimelineSection({
                   >
                     {experience.description[0]}
                   </motion.p>
+                  <motion.div
+                    className="mt-3 flex flex-wrap gap-1.5"
+                    variants={textVariants}
+                  >
+                    {experience.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="inline-flex items-center rounded-full border border-[#e0e0e0] bg-[#fafafc] px-3 py-1 text-xs font-normal text-[#333333]"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </motion.div>
                   <motion.div className="mt-2.5" variants={textVariants}>
                     <Link
                       href={`/experience/${experience.id}`}

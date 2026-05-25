@@ -62,11 +62,11 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
                   </div>
                 )}
                 <div className="flex-1 min-w-0">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                    <h3 className="text-[21px] font-semibold leading-[1.19] tracking-[0.231px] text-[#1d1d1f]">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+                    <h3 className="min-w-0 text-[19px] font-semibold leading-[1.19] tracking-[0.231px] text-[#1d1d1f] md:whitespace-nowrap lg:text-[20px]">
                       {experience.position}
                     </h3>
-                    <span className="inline-flex w-fit items-center rounded-full border border-primary px-3 py-1 text-xs font-normal text-primary sm:text-sm">
+                    <span className="inline-flex w-fit flex-shrink-0 items-center rounded-full border border-primary px-3 py-1 text-xs font-normal text-primary sm:text-sm">
                       {getDurationText(
                         experience.startDate,
                         experience.endDate
@@ -94,6 +94,16 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
                   <p className="line-clamp-2 text-[17px] leading-[1.47] tracking-[-0.374px] text-[#333333]">
                     {experience.description[0]}
                   </p>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {experience.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="inline-flex items-center rounded-full border border-[#e0e0e0] bg-[#fafafc] px-3 py-1 text-xs font-normal text-[#333333]"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
               <Button
