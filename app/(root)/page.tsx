@@ -4,7 +4,6 @@ import Link from "next/link";
 import Script from "next/script";
 
 import { MoreAboutMeSection } from "@/components/about/more-about-me-section";
-import BlogCard from "@/components/blogs/blog-card";
 import { AnimatedSection } from "@/components/common/animated-section";
 import { AnimatedText } from "@/components/common/animated-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
@@ -21,7 +20,6 @@ import { pagesConfig } from "@/config/pages";
 import { featuredProjects } from "@/config/projects";
 import { siteConfig } from "@/config/site";
 import { featuredSkills } from "@/config/skills";
-import { getFeaturedBlogs } from "@/lib/blogs";
 import { cn } from "@/lib/utils";
 import profileImg from "@/public/profile-img.jpg";
 
@@ -35,7 +33,6 @@ export const metadata: Metadata = {
 };
 
 export default function IndexPage() {
-  const featuredBlogs = getFeaturedBlogs();
   // Structured data for personal portfolio
   const personSchema = {
     "@context": "https://schema.org",
@@ -214,46 +211,6 @@ export default function IndexPage() {
         <ContributionCard contributions={featuredContributions} />
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/contributions">
-            <Button variant={"outline"}>
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
-            </Button>
-          </Link>
-        </AnimatedText>
-      </AnimatedSection>
-      <AnimatedSection
-        direction="up"
-        className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-[#f5f5f7] px-5 py-10 md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"
-        id="blogs"
-      >
-        <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-3 text-center">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-[32px] font-semibold leading-[1.1] tracking-[-0.374px] text-[#1d1d1f] md:text-[36px]"
-          >
-            {pagesConfig.blogs.title}
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[760px] text-[18px] font-normal leading-[1.32] tracking-[0.196px] text-[#333333] md:text-[20px]"
-          >
-            {pagesConfig.blogs.description}
-          </AnimatedText>
-        </div>
-        <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredBlogs.map((blog, index) => (
-            <AnimatedSection
-              key={blog.slug}
-              delay={0.1 * (index + 1)}
-              direction="up"
-              className="h-full w-full min-w-0"
-            >
-              <BlogCard blog={blog} />
-            </AnimatedSection>
-          ))}
-        </div>
-        <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/blogs">
             <Button variant={"outline"}>
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>

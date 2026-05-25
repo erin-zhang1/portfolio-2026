@@ -439,65 +439,6 @@ export const Projects: ProjectInterface[] = [
     },
   },
   {
-    id: "builtdesign-blogs",
-    companyName: "Builtdesign Blogs",
-    type: "Professional",
-    category: ["Web Dev", "Full Stack", "UI/UX"],
-    shortDescription:
-      "Crafted Builtdesign's vibrant Blogs Website using Netlify CMS and React for engaging content experiences.",
-    websiteLink: "https://blog.builtdesign.in",
-    techStack: ["Next.js", "React", "Node.js", "MongoDB", "Typescript"],
-    startDate: new Date("2022-03-01"),
-    endDate: new Date("2022-07-01"),
-    companyLogoImg: "/projects/builtdesign-blogs/logo.png",
-    pagesInfoArr: [
-      {
-        title: "Blog Landing Page",
-        description:
-          "Modern and responsive landing page showcasing featured articles",
-        imgArr: ["/projects/builtdesign-blogs/blog_2.webp"],
-      },
-      {
-        title: "Blog Listing",
-        description:
-          "Organized display of all blog posts with search and filtering",
-        imgArr: ["/projects/builtdesign-blogs/blog_3.webp"],
-      },
-      {
-        title: "Category Navigation",
-        description: "Intuitive category-based navigation system",
-        imgArr: ["/projects/builtdesign-blogs/blog_1.webp"],
-      },
-      {
-        title: "Article View",
-        description:
-          "Clean and readable article layout with rich media support",
-        imgArr: [
-          "/projects/builtdesign-blogs/blog_4.webp",
-          "/projects/builtdesign-blogs/blog_5.webp",
-        ],
-      },
-    ],
-    descriptionDetails: {
-      paragraphs: [
-        "As part of the Builtdesign platform, I developed a sophisticated blog website that serves as a content hub for the company's thought leadership and industry insights. The project leveraged Next.js and React to create a fast, SEO-friendly platform.",
-        "The blog platform features a modern, responsive design that prioritizes readability and user engagement. I implemented a robust content management system using Netlify CMS, enabling the content team to easily publish and manage blog posts.",
-        "The architecture includes server-side rendering for optimal performance and SEO, while MongoDB provides flexible content storage. TypeScript ensures code reliability and maintainability throughout the application.",
-        "Key features include category-based navigation, search functionality, and a rich text editor for content creation. The platform supports various content types including images, code snippets, and embedded media.",
-      ],
-      bullets: [
-        "Developed a modern blog platform using Next.js and React with TypeScript",
-        "Implemented Netlify CMS for efficient content management",
-        "Created a responsive design that prioritizes readability and user engagement",
-        "Built server-side rendering for optimal performance and SEO",
-        "Integrated MongoDB for flexible content storage and management",
-        "Developed category-based navigation and search functionality",
-        "Implemented rich text editing capabilities for content creation",
-      ],
-    },
-  },
-
-  {
     id: "cirql-dashboard",
     companyName: "Cirql Dashboard",
     type: "Personal",

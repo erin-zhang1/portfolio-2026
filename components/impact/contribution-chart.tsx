@@ -139,7 +139,7 @@ export function ContributionChart({ username }: ContributionChartProps) {
                 "Dec",
               ],
             }}
-            loading={status === "loading"}
+            loading={false}
             showColorLegend={false}
             showTotalCount={false}
             showWeekdayLabels={false}
