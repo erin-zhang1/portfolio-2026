@@ -41,14 +41,14 @@ export function MetricCard({ metric }: MetricCardProps) {
   return (
     <div
       ref={cardRef}
-      className="flex min-h-[326px] flex-col justify-between rounded-[18px] border border-[#e0e0e0] bg-white p-5 md:p-6"
+      className="flex min-h-[286px] flex-col justify-between rounded-[18px] border border-[#e0e0e0] bg-white p-5 md:p-6"
     >
       <div className="space-y-4">
         <div className="space-y-2">
           <p className="text-[15px] font-semibold leading-[1.35] tracking-[-0.224px] text-[#333333]">
             {metric.label}
           </p>
-          <div className="font-heading text-[40px] font-semibold leading-none tracking-[-0.374px] text-[#1d1d1f] md:text-[52px]">
+          <div className="font-heading text-[38px] font-semibold leading-none tracking-[-0.374px] text-[#1d1d1f] md:text-[48px]">
             <NumberFlow
               value={isVisible ? metric.value : 0}
               format={{
@@ -70,13 +70,13 @@ export function MetricCard({ metric }: MetricCardProps) {
         {hasSparkline ? (
           <SparklineChart
             values={metric.trend as number[]}
-            className="h-28 w-full"
+            className="h-24 w-full"
             height={150}
             width={420}
             strokeWidth={3}
           />
         ) : (
-          <div className="flex h-28 items-end justify-end text-[#0066cc]">
+          <div className="flex h-24 items-end justify-end text-[#0066cc]">
             <svg
               className="h-16 w-20"
               viewBox="0 0 64 56"
