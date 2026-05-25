@@ -107,7 +107,6 @@ function AboutMedia({
         aria-label={card.imageAlt}
         autoPlay
         muted
-        defaultMuted
         loop
         playsInline
         preload="auto"
