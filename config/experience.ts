@@ -17,7 +17,7 @@ export interface ExperienceInterface {
 export const experiences: ExperienceInterface[] = [
   {
     id: "atella-consulting",
-    position: "Actuarial Software Developer (Python & R)",
+    position: "Actuarial Software Developer",
     company: "Atella Consulting",
     location: "North Carolina, United States",
     startDate: new Date("2026-01-15"),
@@ -47,7 +47,7 @@ export const experiences: ExperienceInterface[] = [
   },
   {
     id: "kenna-communications",
-    position: "Data Reporting Analyst (SQL & Python)",
+    position: "Data Reporting Analyst",
     company: "Kenna Communications",
     location: "Mississauga, Canada",
     startDate: new Date("2024-09-15"),
@@ -66,7 +66,7 @@ export const experiences: ExperienceInterface[] = [
   },
   {
     id: "lansi-institute",
-    position: "Data Research Analyst (R & Linux)",
+    position: "Data Research Analyst",
     company: "Chinese Academy of Sciences - Lansi Institute of AI in Medicine",
     location: "Remote",
     startDate: new Date("2024-01-15"),
@@ -83,7 +83,7 @@ export const experiences: ExperienceInterface[] = [
   },
   {
     id: "assetpro",
-    position: "Quantitative Analyst Intern (Python)",
+    position: "Quantitative Analyst Intern",
     company: "AssetPro",
     location: "Shanghai, China",
     startDate: new Date("2023-09-15"),

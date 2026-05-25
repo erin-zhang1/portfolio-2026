@@ -21,6 +21,10 @@ export const routesConfig: any = {
       href: "/skills",
     },
     {
+      title: "About Me",
+      href: "/#about-me",
+    },
+    {
       title: "Blogs",
       href: "/blogs",
     },
