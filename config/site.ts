@@ -9,7 +9,6 @@ export const siteConfig = {
     github: "https://github.com/erin-zhang1",
     linkedin: "https://www.linkedin.com/in/erin-zhang-823217252",
     email: "mailto:y3695zha@uwaterloo.ca",
-    templateRepo: "https://github.com/namanbarkiya/minimal-next-portfolio",
   },
   ogImage:
     "https://res.cloudinary.com/dvt5vkfwz/image/upload/v1767384721/naman_portfolio_og_image.png",
