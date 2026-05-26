@@ -8,14 +8,12 @@ import { AnimatedSection } from "@/components/common/animated-section";
 import { AnimatedText } from "@/components/common/animated-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
-import ContributionCard from "@/components/contributions/contribution-card";
 import { EducationTimelineSection } from "@/components/education/education-timeline-section";
 import { ExperienceTimelineSection } from "@/components/experience/experience-timeline-section";
 import { EngineeringImpactSection } from "@/components/impact/engineering-impact-section";
 import ProjectCard from "@/components/projects/project-card";
 import SkillsCard from "@/components/skills/skills-card";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { featuredContributions } from "@/config/contributions";
 import { education } from "@/config/education";
 import { experiences } from "@/config/experience";
 import { pagesConfig } from "@/config/pages";
@@ -193,49 +191,20 @@ export default function IndexPage() {
       <EducationTimelineSection education={education} />
       <AnimatedSection
         direction="up"
-        className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-white px-5 py-10 md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"
-        id="contributions"
+        className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-[#f5f5f7] px-5 py-10 md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"
+        id="skills"
       >
         <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-3 text-center">
           <AnimatedText
             as="h2"
             className="font-heading text-[32px] font-semibold leading-[1.1] tracking-[-0.374px] text-[#1d1d1f] md:text-[36px]"
           >
-            {pagesConfig.contributions.title}
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[760px] text-[18px] font-normal leading-[1.32] tracking-[0.196px] text-[#333333] md:text-[20px]"
-          >
-            {pagesConfig.contributions.description}
-          </AnimatedText>
-        </div>
-        <ContributionCard contributions={featuredContributions} />
-        <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/contributions">
-            <Button variant={"outline"}>
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
-            </Button>
-          </Link>
-        </AnimatedText>
-      </AnimatedSection>
-      <AnimatedSection
-        direction="up"
-        className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-black px-5 py-10 text-white md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"
-        id="skills"
-      >
-        <div className="mx-auto flex max-w-[980px] flex-col items-center space-y-3 text-center">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-[32px] font-semibold leading-[1.1] tracking-[-0.374px] text-white md:text-[36px]"
-          >
             {pagesConfig.skills.title}
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
-            className="max-w-[760px] text-[18px] font-normal leading-[1.32] tracking-[0.196px] text-[#cccccc] md:text-[20px]"
+            className="max-w-[760px] text-[18px] font-normal leading-[1.32] tracking-[0.196px] text-[#333333] md:text-[20px]"
           >
             {pagesConfig.skills.description}
           </AnimatedText>
@@ -245,7 +214,7 @@ export default function IndexPage() {
           <Link href="/skills">
             <Button
               variant={"outline"}
-              className="border-[#2997ff] text-[#2997ff] hover:bg-[#2997ff] hover:text-white"
+              className="border-[#0066cc] bg-white text-[#0066cc] hover:bg-[#0066cc] hover:text-white"
             >
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>
