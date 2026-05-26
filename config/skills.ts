@@ -13,49 +13,49 @@ export const skillsUnsorted: skillsInterface[] = [
     description:
       "Build automation, ETL workflows, calculation engines, and data pipelines.",
     rating: 5,
-    icon: Icons.laptop,
+    icon: Icons.pythonSkill,
   },
   {
     name: "SQL",
     description:
       "Write optimized queries with CTEs, window functions, and reporting logic.",
     rating: 5,
-    icon: Icons.mysql,
+    icon: Icons.sqlSkill,
   },
   {
     name: "Django",
     description:
       "Create internal web tools that connect review pages with backend workflows.",
     rating: 4,
-    icon: Icons.laptop,
+    icon: Icons.djangoSkill,
   },
   {
     name: "R",
     description:
       "Develop reproducible analytics and QA pipelines for scientific datasets.",
     rating: 4,
-    icon: Icons.settings,
+    icon: Icons.rSkill,
   },
   {
     name: "pandas",
     description:
       "Clean, join, validate, and transform operational and financial datasets.",
     rating: 4,
-    icon: Icons.page,
+    icon: Icons.pandasSkill,
   },
   {
     name: "pytest",
     description:
       "Protect calculation systems with unit, regression, and validation tests.",
     rating: 4,
-    icon: Icons.check,
+    icon: Icons.pytestSkill,
   },
   {
     name: "Tableau",
     description:
       "Power dashboards for operational monitoring and performance tracking.",
     rating: 4,
-    icon: Icons.media,
+    icon: Icons.tableauSkill,
   },
   {
     name: "React",
@@ -83,14 +83,14 @@ export const skillsUnsorted: skillsInterface[] = [
     description:
       "Model, validate, and replace manual spreadsheet workflows with automation.",
     rating: 4,
-    icon: Icons.page,
+    icon: Icons.excelSkill,
   },
   {
     name: "Linux",
     description:
       "Work with shell environments, file workflows, and data-processing systems.",
     rating: 3,
-    icon: Icons.laptop,
+    icon: Icons.linuxSkill,
   },
 ];
 

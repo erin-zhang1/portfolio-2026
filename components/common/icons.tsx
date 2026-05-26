@@ -2,7 +2,9 @@ import {
   AlertTriangle,
   ArrowRight,
   BookMarked,
+  Braces,
   Building,
+  ChartColumn,
   Calendar,
   Check,
   ChevronDown,
@@ -10,8 +12,11 @@ import {
   ChevronRight,
   Clock,
   CreditCard,
+  Database,
   File,
   FileText,
+  FileSpreadsheet,
+  FlaskConical,
   HelpCircle,
   Image,
   Laptop,
@@ -22,11 +27,16 @@ import {
   Phone,
   Pizza,
   Plus,
+  Sigma,
   Settings,
+  SquareChartGantt,
+  Table2,
+  TerminalSquare,
   Trash,
   User,
   X,
 } from "lucide-react";
+import type React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { BiLaugh, BiSolidUser } from "react-icons/bi";
 import { BsInfoCircle, BsQuestionCircle } from "react-icons/bs";
@@ -54,6 +64,8 @@ import {
   SiNetlify,
   SiNextdotjs,
   SiNodedotjs,
+  SiPython,
+  SiR,
   SiReact,
   SiRedux,
   SiSocketdotio,
@@ -61,6 +73,49 @@ import {
   SiTypescript,
   SiX,
 } from "react-icons/si";
+
+type SkillIconProps = {
+  size?: number | string;
+  className?: string;
+};
+
+const SkillLogoBadge = ({
+  children,
+  size = 34,
+  className = "",
+}: SkillIconProps & { children: React.ReactNode }) => (
+  <span
+    className={`inline-flex items-center justify-center rounded-[8px] bg-[#0066cc] text-white ${className}`}
+    style={{ width: size, height: size }}
+  >
+    {children}
+  </span>
+);
+
+const SkillLineIcon = ({
+  Icon,
+  size = 34,
+  className = "",
+}: SkillIconProps & { Icon: React.ComponentType<LucideProps> }) => (
+  <Icon
+    aria-hidden="true"
+    size={size}
+    className={className}
+    strokeWidth={1.8}
+  />
+);
+
+const PythonSkillLogo = ({ size = 34, className = "" }: SkillIconProps) => (
+  <SkillLogoBadge size={size} className={className}>
+    <SiPython size={Math.round(Number(size) * 0.68)} aria-hidden="true" />
+  </SkillLogoBadge>
+);
+
+const RSkillLogo = ({ size = 34, className = "" }: SkillIconProps) => (
+  <SkillLogoBadge size={size} className={className}>
+    <SiR size={Math.round(Number(size) * 0.68)} aria-hidden="true" />
+  </SkillLogoBadge>
+);
 
 export const Icons = {
   contact: Phone,
@@ -107,6 +162,32 @@ export const Icons = {
   mongodb: SiMongodb,
   mui: SiMui,
   mysql: SiMysql,
+  pythonSkill: PythonSkillLogo,
+  sqlSkill: (props: SkillIconProps) => (
+    <SkillLineIcon Icon={Database} {...props} />
+  ),
+  djangoSkill: (props: SkillIconProps) => (
+    <SkillLineIcon Icon={SquareChartGantt} {...props} />
+  ),
+  rSkill: RSkillLogo,
+  pandasSkill: (props: SkillIconProps) => (
+    <SkillLineIcon Icon={Table2} {...props} />
+  ),
+  pytestSkill: (props: SkillIconProps) => (
+    <SkillLineIcon Icon={FlaskConical} {...props} />
+  ),
+  tableauSkill: (props: SkillIconProps) => (
+    <SkillLineIcon Icon={ChartColumn} {...props} />
+  ),
+  excelSkill: (props: SkillIconProps) => (
+    <SkillLineIcon Icon={FileSpreadsheet} {...props} />
+  ),
+  linuxSkill: (props: SkillIconProps) => (
+    <SkillLineIcon Icon={TerminalSquare} {...props} />
+  ),
+  restApiSkill: (props: SkillIconProps) => (
+    <SkillLineIcon Icon={ArrowRight} {...props} />
+  ),
   nestjs: SiNestjs,
   netlify: SiNetlify,
   nextjs: SiNextdotjs,
@@ -121,7 +202,7 @@ export const Icons = {
   linkedin: SiLinkedin,
   userFill: BiSolidUser,
   work: HiBriefcase,
-  gitHub: ({ ...props }: LucideProps) => (
+  gitHub: ({ size = 34, className, ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
       focusable="false"
@@ -129,7 +210,10 @@ export const Icons = {
       data-icon="github"
       role="img"
       xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
       viewBox="0 0 496 512"
+      className={className}
       {...props}
     >
       <path
