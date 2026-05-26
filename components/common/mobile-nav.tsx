@@ -8,9 +8,10 @@ import { cn } from "@/lib/utils";
 interface MobileNavProps {
   items: any[];
   children?: React.ReactNode;
+  onLinkClick?: () => void;
 }
 
-export function MobileNav({ items, children }: MobileNavProps) {
+export function MobileNav({ items, children, onLinkClick }: MobileNavProps) {
   useLockBody();
 
   return (
@@ -30,6 +31,7 @@ export function MobileNav({ items, children }: MobileNavProps) {
             <Link
               key={index}
               href={item.disabled ? "#" : item.href}
+              onClick={onLinkClick}
               className={cn(
                 "flex w-full items-center border-b border-white/10 py-4 font-normal text-white/80 hover:text-white",
                 item.disabled && "cursor-not-allowed opacity-60"
