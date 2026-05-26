@@ -9,12 +9,14 @@ import { AnimatedText } from "@/components/common/animated-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
 import ContributionCard from "@/components/contributions/contribution-card";
+import { EducationTimelineSection } from "@/components/education/education-timeline-section";
 import { ExperienceTimelineSection } from "@/components/experience/experience-timeline-section";
 import { EngineeringImpactSection } from "@/components/impact/engineering-impact-section";
 import ProjectCard from "@/components/projects/project-card";
 import SkillsCard from "@/components/skills/skills-card";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { featuredContributions } from "@/config/contributions";
+import { education } from "@/config/education";
 import { experiences } from "@/config/experience";
 import { pagesConfig } from "@/config/pages";
 import { featuredProjects } from "@/config/projects";
@@ -188,6 +190,7 @@ export default function IndexPage() {
         </AnimatedText>
       </AnimatedSection>
       <ExperienceTimelineSection experiences={experiences.slice(0, 4)} />
+      <EducationTimelineSection education={education} />
       <AnimatedSection
         direction="up"
         className="flex min-h-[calc(100svh-44px)] flex-col justify-center space-y-5 bg-white px-5 py-10 md:px-8 lg:h-[calc(100svh-44px)] lg:py-8"
