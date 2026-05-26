@@ -89,7 +89,9 @@ export function MainNav({ items, children }: MainNavProps) {
         <span className="font-normal">Menu</span>
       </motion.button>
       {showMobileMenu && items && (
-        <MobileNav items={items}>{children}</MobileNav>
+        <MobileNav items={items} onLinkClick={() => setShowMobileMenu(false)}>
+          {children}
+        </MobileNav>
       )}
     </div>
   );
