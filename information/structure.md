@@ -28,7 +28,6 @@ This is the folder structure of the whole application
 │ ├── favicon.ico
 │ ├── globals.css
 │ ├── layout.tsx
-│ └── manifest.ts
 ├── assets
 │ └── fonts
 │ ├── CalSans-SemiBold.ttf
