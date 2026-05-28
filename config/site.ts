@@ -9,14 +9,10 @@ export const siteConfig = {
     github: "https://github.com/erin-zhang1",
     linkedin: "https://www.linkedin.com/in/erin-zhang-823217252",
     email: "mailto:y3695zha@uwaterloo.ca",
-    templateRepo: "https://github.com/namanbarkiya/minimal-next-portfolio",
   },
-  ogImage:
-    "https://res.cloudinary.com/dvt5vkfwz/image/upload/v1767384721/naman_portfolio_og_image.png",
-  iconIco:
-    "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357384/assets/naman-favicon.ico",
-  logoIcon:
-    "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357294/assets/naman-logo.png",
+  ogImage: "/logo.png",
+  iconIco: "/logo.png",
+  logoIcon: "/logo.png",
   keywords: [
     "Erin Zhang",
     "Software Developer",
